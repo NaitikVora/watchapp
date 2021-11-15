@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "302008502712",
+    "firebase_url": "https://watchapp-e17ee-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "watchapp-e17ee",
+    "storage_bucket": "watchapp-e17ee.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:302008502712:android:4ef4ddc367d636230f674d",
+        "android_client_info": {
+          "package_name": "com.bughopper.feelsafe"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "302008502712-3bntbha5pso5t5vmn6dnr83liol6h4aa.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.bughopper.feelsafe",
+            "certificate_hash": "93f192a29ed51b04413ce4acd526b0bae9b1ffd4"
+          }
+        },
+        {
+          "client_id": "302008502712-u6luif836co4dcjfpjrnnkmat34jrl3i.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDTJJJ8MoJltgrLbyDVXjEvIq91z6yqvu8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "302008502712-u6luif836co4dcjfpjrnnkmat34jrl3i.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
