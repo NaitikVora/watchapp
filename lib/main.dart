@@ -3,13 +3,15 @@ import 'package:feel_safe/pages/login.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'services/getlocation.dart';
 
 var user;
 void main() async {
+  //var x = GetLocation.getLocation().toString();
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
   user = FirebaseAuth.instance.currentUser;
-  print(user);
+  //print(user);
   runApp(new MyApp());
 }
 

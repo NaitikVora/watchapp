@@ -33,7 +33,7 @@ Future<Address> getCurrentLocation() async {
     addresses = await Geocoder.local.findAddressesFromCoordinates(coordinates);
 
     first = addresses.first;
-    print("${first.featureName} : ${first.addressLine}");
+    //print("${first.featureName} : ${first.addressLine}");
 
     //print(first);
   } catch (e) {

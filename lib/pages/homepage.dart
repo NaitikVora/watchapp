@@ -1,3 +1,4 @@
+import 'package:feel_safe/chat/home_screen.dart';
 import 'package:feel_safe/pages/createReportOptions.dart';
 import 'package:feel_safe/pages/mapview.dart';
 import 'package:feel_safe/pages/result.dart';
@@ -53,6 +54,11 @@ class _HomePageState extends State<HomePage> {
                 break;
 
               case "chat":
+                Navigator.of(context).push(
+                    MaterialPageRoute(builder: (context) => HomeScreen()));
+
+                /*Navigator.of(context).push(
+                    MaterialPageRoute(builder: (context) => HomeScreen()));*/
                 break;
             }
           },
@@ -156,8 +162,11 @@ class _HomePageState extends State<HomePage> {
                         // mainAxisAlignment: MainAxisAlignment.center,
                         children: <Widget>[
                           //Fetching Report options
-                          retButton("Your Neighbourhood", Colors.white,
-                              Color.fromRGBO(72, 189, 13, 1), "status"),
+                          retButton(
+                              "Your Neighbourhood's Reports",
+                              Colors.white,
+                              Color.fromRGBO(72, 189, 13, 1),
+                              "status"),
                         ],
                       ),
                     ),

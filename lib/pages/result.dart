@@ -40,7 +40,7 @@ class _ShowResultState extends State<ShowResult> {
     subscription = collectionReference.snapshots().listen((datasnapshot) {
       getCurrentLocation().then((address) {
         var x = address.subLocality.toString();
-        print(x);
+        //print(x);
 
         FirebaseFirestore.instance
             .collection('/reports')
