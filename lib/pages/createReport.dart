@@ -62,7 +62,7 @@ class _CreateReportState extends State<CreateReport> {
           'Subloc': widget._location.subLocality,
           'City': widget._location.locality,
           'State': widget._location.adminArea,
-          'Report time': FieldValue.serverTimestamp(),
+          'Report_time': FieldValue.serverTimestamp(),
         };
         await collectionReference.add(x).catchError((err) {
           print("Error $err");

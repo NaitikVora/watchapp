@@ -45,10 +45,8 @@ class Chats extends StatelessWidget {
 
 //add location to retrieve chats from current location only
   final Stream<QuerySnapshot> _chatsStream = FirebaseFirestore.instance
-      .collection('chats')
-      .where("Subloc == " + GetLocation.getLocation().toString()) //isEqualTo:
+      .collection('chats') //isEqualTo:
       .orderBy('createdAt', descending: false)
-      .limit(15)
       .snapshots();
 //add location filter
 
