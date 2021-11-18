@@ -31,9 +31,10 @@ class _ShowResultState extends State<ShowResult> {
   void initState() {
     super.initState();
     key = "c0dd7cc7ac9d4795a2899b239ca25dd8";
-    query =
-        "(+injured OR +killed OR +accident) AND (+${widget._location}) AND (-football OR -cricket) AND ${widget._location}";
-    url = "https://newsapi.org/v2/everything?q=$query&apiKey=$key";
+    //query =
+    //    "(+injured OR +killed OR +accident) AND (-football OR -cricket)";
+    //url = "https://newsapi.org/v2/everything?q=$query&apiKey=$key";
+    url ="https://newsapi.org/v2/top-headlines?country=in&apiKey=$key";
     // print(url);
     this.getJsonData();
 

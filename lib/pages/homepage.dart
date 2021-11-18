@@ -163,7 +163,7 @@ class _HomePageState extends State<HomePage> {
                         children: <Widget>[
                           //Fetching Report options
                           retButton(
-                              "Your Neighbourhood's Reports",
+                              "In My Vicinity",
                               Colors.white,
                               Color.fromRGBO(72, 189, 13, 1),
                               "status"),
