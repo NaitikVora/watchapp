@@ -1,16 +1,15 @@
-# test
+# Neighbourhood Watch App in flutter for Android OS and Apple IOS
 
-A new Flutter project.
+## Development in process
 
-## Getting Started
+Introducing the Neigbourhood Watch App,
 
-This project is a starting point for a Flutter application.
+## Features/ Progress
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+<li> Users can report crime. </li>
+<li> See crime reports submitted depending upon their current location and only those reports in his/her area will be visible. </li>
+<li> View news from news api on current location of the user. </li>
+<li> Chat anonymously with neighbours from the same neighbourhood logged into the app. </li>
+<li> Users can select on the map to report a crime or select current location as a measure for generating valid report. </li>
+<li> App is connected with firebase, so crime reports and chats are maintained forever. </li>
+<li> Since chats are inserted in firebase, they can be monitored and moderated by an admin. </li>
