@@ -63,8 +63,8 @@ class _ShowResultState extends State<ShowResult> {
   _launchURL(url) async {
     if (await canLaunch(url)) {
       await launch(url);
-    } else {
-      throw 'Could not launch $url';
+    }else{
+      await launch(url);
     }
   }
 
