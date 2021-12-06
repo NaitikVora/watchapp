@@ -13,3 +13,4 @@ Introducing the Neigbourhood Watch App,
 <li> Users can select on the map to report a crime or select current location as a measure for generating valid report. </li>
 <li> App is connected with firebase, so crime reports and chats are maintained forever. </li>
 <li> Since chats are inserted in firebase, they can be monitored and moderated by an admin. </li>
+<li> Users can read the top headlines of Indian news using news api</li>
