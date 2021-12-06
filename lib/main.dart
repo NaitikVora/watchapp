@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
     return new MaterialApp(
       title: 'The Neighbourhood Watch App',
       theme: new ThemeData(
-          scaffoldBackgroundColor: Color.fromRGBO(7, 134, 237, 0.7)),
+          scaffoldBackgroundColor: Color.fromRGBO(33, 106, 217, 0.7)),
       home: (user == null) ? Login() : HomePage(),
     );
   }

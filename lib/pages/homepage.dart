@@ -6,6 +6,8 @@ import 'package:feel_safe/services/locationinfo.dart';
 import 'package:feel_safe/widgets/drawer.dart';
 import 'package:flutter/material.dart';
 import 'package:geocoder/geocoder.dart';
+import 'package:flutter_phone_direct_caller/flutter_phone_direct_caller.dart';
+import 'package:flutter_beautiful_popup/main.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -27,6 +29,31 @@ class _HomePageState extends State<HomePage> {
   goToResult() {
     Navigator.of(context).push(
         MaterialPageRoute(builder: (context) => ShowResult(_locationEntered)));
+  }
+
+  handleEmergency() {
+    final popup = BeautifulPopup(
+      context: context,
+      template: TemplateGeolocation,
+    );
+    popup.show(
+      title: 'Emergency Dial',
+      content:
+          '\nAre you in danger and require immediate help? \n\nProceed to call "100" Indian Police Emergency Helpline Number. Never misuse the Emergency Helplines.',
+      actions: [
+        popup.button(
+          label: 'HELP NOW!',
+          onPressed: () async {
+            const number = '09930854717'; //Add Emergency Helpline here
+            bool? res = await FlutterPhoneDirectCaller.callNumber(number);
+          },
+        ),
+        popup.button(
+          label: 'DISMISS',
+          onPressed: Navigator.of(context).pop,
+        ),
+      ],
+    );
   }
 
   goToMap() {}
@@ -56,9 +83,10 @@ class _HomePageState extends State<HomePage> {
               case "chat":
                 Navigator.of(context).push(
                     MaterialPageRoute(builder: (context) => HomeScreen()));
+                break;
 
-                /*Navigator.of(context).push(
-                    MaterialPageRoute(builder: (context) => HomeScreen()));*/
+              case "emergency":
+                handleEmergency();
                 break;
             }
           },
@@ -141,7 +169,7 @@ class _HomePageState extends State<HomePage> {
                         children: <Widget>[
                           //Fetching Report options
                           retButton("Report Crime", Colors.white,
-                              Colors.redAccent, "report now"),
+                              Color.fromRGBO(149, 22, 222, 1), "report now"),
                         ],
                       ),
                     ),
@@ -152,7 +180,18 @@ class _HomePageState extends State<HomePage> {
                         children: <Widget>[
                           //Fetching Report options
                           retButton("Chat Anonymously", Colors.white,
-                              Colors.purple[900], "chat"),
+                              Color.fromRGBO(69, 0, 242, 1), "chat"),
+                        ],
+                      ),
+                    ),
+                    Container(
+                      padding: EdgeInsets.all(0.0),
+                      child: Column(
+                        // mainAxisAlignment: MainAxisAlignment.center,
+                        children: <Widget>[
+                          //Fetching Report options
+                          retButton("In My Vicinity", Colors.white,
+                              Color.fromRGBO(72, 189, 13, 1), "status"),
                         ],
                       ),
                     ),
@@ -163,10 +202,11 @@ class _HomePageState extends State<HomePage> {
                         children: <Widget>[
                           //Fetching Report options
                           retButton(
-                              "In My Vicinity",
-                              Colors.white,
-                              Color.fromRGBO(72, 189, 13, 1),
-                              "status"),
+                            "Emergency",
+                            Colors.white,
+                            Colors.red,
+                            "emergency",
+                          ),
                         ],
                       ),
                     ),

@@ -10,7 +10,7 @@ Widget CustomDrawer(BuildContext context) {
     child: ListView(
       children: <Widget>[
         ListTile(
-            title: Text("Home"),
+            title: Text("Dashboard"),
             trailing: Icon(Icons.home),
             onTap: () {
               Navigator.of(context).pop();
@@ -18,7 +18,7 @@ Widget CustomDrawer(BuildContext context) {
                   builder: (BuildContext context) => HomePage()));
             }),
         ListTile(
-            title: Text("Report"),
+            title: Text("Report Crime"),
             trailing: Icon(Icons.report),
             onTap: () {
               Navigator.of(context).pop();
