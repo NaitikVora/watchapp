@@ -39,18 +39,30 @@ class _HomePageState extends State<HomePage> {
     popup.show(
       title: 'Emergency Dial',
       content:
-          '\nAre you in danger and require immediate help? \n\nProceed to call "100" Indian Police Emergency Helpline Number. Never misuse the Emergency Helplines.',
+          '\nAre you in danger and require immediate help? \n\nProceed to call Indian Emergency Helpline Numbers. Never misuse the Emergency Helplines.',
       actions: [
         popup.button(
-          label: 'HELP NOW!',
+          label: 'POLICE',
           onPressed: () async {
-            const number = '09930854717'; //Add Emergency Helpline here
+            const number =
+                '09930854717'; //Add 100 POLICE Emergency Helpline here
             bool? res = await FlutterPhoneDirectCaller.callNumber(number);
           },
         ),
         popup.button(
-          label: 'DISMISS',
-          onPressed: Navigator.of(context).pop,
+          label: 'FIRE',
+          onPressed: () async {
+            const number = '09930854717'; //Add 101 FIRE Emergency Helpline here
+            bool? res = await FlutterPhoneDirectCaller.callNumber(number);
+          },
+        ),
+        popup.button(
+          label: 'AMBULANCE',
+          onPressed: () async {
+            const number =
+                '09930854717'; //Add 102 Ambulance Emergency Helpline here
+            bool? res = await FlutterPhoneDirectCaller.callNumber(number);
+          },
         ),
       ],
     );

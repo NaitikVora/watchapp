@@ -1,8 +1,10 @@
+import 'package:feel_safe/services/storage_service.dart';
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:geocoder/geocoder.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'homepage.dart';
+import 'package:file_picker/file_picker.dart';
 
 late FirebaseAuth _auth;
 
@@ -34,8 +36,8 @@ class _CreateReportState extends State<CreateReport> {
       context: context,
       builder: (BuildContext context) {
         return AlertDialog(
-          title: new Text("Report successfully submitted"),
-          content: new Text("Thank you for contributing"),
+          title: new Text("Report Successfully Submitted"),
+          content: new Text("Thank you for contributing!"),
           actions: <Widget>[
             new FlatButton(
               child: new Text("Continue"),
@@ -85,6 +87,7 @@ class _CreateReportState extends State<CreateReport> {
 
   @override
   Widget build(BuildContext context) {
+    final Storage storage = Storage();
     return Scaffold(
       key: _scaffoldKey,
       appBar: AppBar(
@@ -132,6 +135,39 @@ class _CreateReportState extends State<CreateReport> {
                     ),
                     onSaved: (value) => _info = value,
                   ),
+                  SizedBox(
+                    height: 30.0,
+                  ),
+                  //Evidence upload
+                  ElevatedButton(
+                      onPressed: () async {
+                        final results = await FilePicker.platform.pickFiles(
+                          allowMultiple: true,
+                        ); //Add multiple files and filetype filters in future
+
+                        if (results == null) {
+                          ScaffoldMessenger.of(context).showSnackBar(
+                            const SnackBar(
+                              content: Text("File not selected"),
+                            ),
+                          );
+                          return null;
+                        }
+
+                        String path = results.files.single.path.toString();
+                        final fileName = results.files.single.name;
+
+                        print(path);
+                        print(fileName);
+
+                        storage.uploadFile(path, fileName).then((value) =>
+                            ScaffoldMessenger.of(context)
+                                .showSnackBar(const SnackBar(
+                              content: Text("Evidence Uploaded"),
+                            )));
+                      },
+                      child: Text("Upload file evidence(s) if any")),
+                  //Evidence upload
                   SizedBox(
                     height: 30.0,
                   ),

@@ -7,8 +7,8 @@ import 'services/getlocation.dart';
 
 var user;
 void main() async {
-  //var x = GetLocation.getLocation().toString();
   WidgetsFlutterBinding.ensureInitialized();
+  GetLocation.getLocation();
   await Firebase.initializeApp();
   user = FirebaseAuth.instance.currentUser;
   //print(user);
@@ -20,6 +20,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return new MaterialApp(
+      debugShowCheckedModeBanner: false, //Hides the debug banner
       title: 'The Neighbourhood Watch App',
       theme: new ThemeData(
           scaffoldBackgroundColor: Color.fromRGBO(33, 106, 217, 0.7)),

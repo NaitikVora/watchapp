@@ -11,16 +11,18 @@ import 'package:location/location.dart';
 import 'package:feel_safe/services/getlocation.dart';
 
 class HomeScreen extends StatelessWidget {
+  final userloc = GetLocation.getLocation().toString();
   HomeScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    //final userloc = GetLocation.getLocation().toString();
     final user = FirebaseAuth.instance.currentUser;
 
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          "Neighbourhood Group Chat",
+          userloc,
           style: appBarTheme,
         ),
         actions: <Widget>[],
@@ -45,7 +47,8 @@ class Chats extends StatelessWidget {
 
 //add location to retrieve chats from current location only
   final Stream<QuerySnapshot> _chatsStream = FirebaseFirestore.instance
-      .collection('chats') //isEqualTo:
+      .collection('chats')
+      .where('Subloc', isEqualTo: GetLocation.getLocation()) //isEqualTo:
       .orderBy('createdAt', descending: false)
       .snapshots();
 //add location filter
