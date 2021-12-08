@@ -16,3 +16,4 @@ Introducing the Neigbourhood Watch App,
 <li> Users can read the top headlines of Indian news using news api</li>
 <li> Upload media evidence to the firebase database storage</li>
 <li> Retrieve the images uploaded as part of evidence for the crime reports in your area tab</li>
+<li> Users can check the garbage tracking module</li>
