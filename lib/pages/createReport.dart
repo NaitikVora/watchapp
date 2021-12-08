@@ -30,6 +30,7 @@ class _CreateReportState extends State<CreateReport> {
 
   String? _title = "";
   String? _info = "";
+  String download_url = "None";
 
   void _showSubmitDialog(String msg) async {
     showDialog(
@@ -65,6 +66,8 @@ class _CreateReportState extends State<CreateReport> {
           'City': widget._location.locality,
           'State': widget._location.adminArea,
           'Report_time': FieldValue.serverTimestamp(),
+          'Evidence': download_url,
+          //'Evidence': download_url.toString(),
         };
         await collectionReference.add(x).catchError((err) {
           print("Error $err");
@@ -154,19 +157,22 @@ class _CreateReportState extends State<CreateReport> {
                           return null;
                         }
 
-                        String path = results.files.single.path.toString();
-                        final fileName = results.files.single.name;
+                        String? path = results.files.single.path;
+                        String fileName = results.files.single.name;
 
-                        print(path);
-                        print(fileName);
-
-                        storage.uploadFile(path, fileName).then((value) =>
+                        storage.uploadFile(path!, fileName).then((value) =>
                             ScaffoldMessenger.of(context)
                                 .showSnackBar(const SnackBar(
                               content: Text("Evidence Uploaded"),
                             )));
+
+                        /*storage
+                            .downloadUrl(fileName)
+                            .then((value) => download_url = value);*/
+
+                        download_url = fileName;
                       },
-                      child: Text("Upload file evidence(s) if any")),
+                      child: Text("Upload file evidence if any")),
                   //Evidence upload
                   SizedBox(
                     height: 30.0,

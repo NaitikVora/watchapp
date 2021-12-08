@@ -8,6 +8,7 @@ import 'package:flutter/material.dart';
 import 'package:geocoder/geocoder.dart';
 import 'package:flutter_phone_direct_caller/flutter_phone_direct_caller.dart';
 import 'package:flutter_beautiful_popup/main.dart';
+import 'garbageTracking.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -99,6 +100,12 @@ class _HomePageState extends State<HomePage> {
 
               case "emergency":
                 handleEmergency();
+                break;
+
+              case "garbage":
+                //Add garbage tracking page here
+                Navigator.of(context).push(
+                    MaterialPageRoute(builder: (context) => GarbageTracking()));
                 break;
             }
           },
@@ -204,6 +211,17 @@ class _HomePageState extends State<HomePage> {
                           //Fetching Report options
                           retButton("In My Vicinity", Colors.white,
                               Color.fromRGBO(72, 189, 13, 1), "status"),
+                        ],
+                      ),
+                    ),
+                    Container(
+                      padding: EdgeInsets.all(0.0),
+                      child: Column(
+                        // mainAxisAlignment: MainAxisAlignment.center,
+                        children: <Widget>[
+                          //Fetching Report options
+                          retButton("Garbage Tracking", Colors.white,
+                              Colors.orange, "garbage"),
                         ],
                       ),
                     ),

@@ -6,6 +6,7 @@ import 'package:feel_safe/widgets/drawer.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:http/http.dart' as http;
+import 'package:feel_safe/services/storage_service.dart';
 
 class ShowResult extends StatefulWidget {
   final String _location;
@@ -34,7 +35,7 @@ class _ShowResultState extends State<ShowResult> {
     //query =
     //    "(+injured OR +killed OR +accident) AND (-football OR -cricket)";
     //url = "https://newsapi.org/v2/everything?q=$query&apiKey=$key";
-    url ="https://newsapi.org/v2/top-headlines?country=in&apiKey=$key";
+    url = "https://newsapi.org/v2/top-headlines?country=in&apiKey=$key";
     // print(url);
     this.getJsonData();
 
@@ -46,7 +47,7 @@ class _ShowResultState extends State<ShowResult> {
         FirebaseFirestore.instance
             .collection('/reports')
             .where('Subloc', isEqualTo: x)
-            .orderBy('Report_time',descending: true)
+            .orderBy('Report_time', descending: true)
             .get()
             .then((docs) {
           setState(() {
@@ -63,7 +64,7 @@ class _ShowResultState extends State<ShowResult> {
   _launchURL(url) async {
     if (await canLaunch(url)) {
       await launch(url);
-    }else{
+    } else {
       await launch(url);
     }
   }
@@ -84,6 +85,9 @@ class _ShowResultState extends State<ShowResult> {
 
   @override
   Widget build(BuildContext context) {
+    final Storage storage = Storage();
+    String netURLDef =
+        "https://demofree.sirv.com/nope-not-here.jpg"; //By default
     return Scaffold(
       appBar: AppBar(
         title: t ? Text("NEWS") : Text("REPORTS"),
@@ -145,6 +149,31 @@ class _ShowResultState extends State<ShowResult> {
           : ListView.builder(
               itemCount: _lengthOfEventsData,
               itemBuilder: (BuildContext context, int index) {
+                //Method to check if image is provided and proceed accordingly
+
+                Widget getEvidence() {
+                  String fileNameUploaded =
+                      eventsData[index]['Evidence'].toString();
+
+                  if (fileNameUploaded != "None") {
+                    return ElevatedButton(
+                        onPressed: () async {
+                          String fileNameUploaded =
+                              eventsData[index]['Evidence'].toString();
+
+                          if (fileNameUploaded != "None") {
+                            storage.downloadUrl(fileNameUploaded).then((value) {
+                              print(value);
+                              netURLDef = value;
+                              _launchURL(netURLDef);
+                            });
+                          }
+                        },
+                        child: Text("Evidence"));
+                  }
+                  return Text("Evidence unavailable");
+                }
+
                 return Container(
                   padding: EdgeInsets.fromLTRB(10.0, 5.0, 10.0, 0.0),
                   child: Center(
@@ -186,13 +215,30 @@ class _ShowResultState extends State<ShowResult> {
                               padding: EdgeInsets.all(5.0),
                             ),
                             Text(
-                              "Time: "+((eventsData[index]['Report_time'] as Timestamp).toDate()).toString(),
+                              "Time: " +
+                                  ((eventsData[index]['Report_time']
+                                              as Timestamp)
+                                          .toDate())
+                                      .toString(),
                               style: TextStyle(
-                                  fontSize: 11.0, fontWeight: FontWeight.normal),
+                                  fontSize: 11.0,
+                                  fontWeight: FontWeight.normal),
                             ),
                             Padding(
                               padding: EdgeInsets.all(5.0),
                             ),
+                            getEvidence(),
+                            /*Container(
+                              width: MediaQuery.of(context).size.width,
+                              height: 100,
+                              decoration: BoxDecoration(
+                                image: DecorationImage(
+                                  fit: BoxFit.fill,
+                                  image: NetworkImage(
+                                      eventsData[index]['Evidence']),
+                                ),
+                              ),
+                            ),*/
                           ],
                         ),
                       ),

@@ -6,9 +6,9 @@ class Storage {
   final firebase_storage.FirebaseStorage storage =
       firebase_storage.FirebaseStorage.instance;
 
+  //Upload file method
   Future<void> uploadFile(String filePath, String fileName) async {
     File file = File(filePath);
-
     try {
       await storage.ref('evidence/$fileName').putFile(file);
     } on firebase_core.FirebaseException catch (e) {
@@ -16,6 +16,7 @@ class Storage {
     }
   }
 
+  //Retrieve list of all files method
   Future<firebase_storage.ListResult> listFiles() async {
     firebase_storage.ListResult results =
         await storage.ref('evidence').listAll();
@@ -23,5 +24,12 @@ class Storage {
       print('Found file: $ref');
     });
     return results;
+  }
+
+  //Get download url of file requested method
+  Future<String> downloadUrl(String imageName) async {
+    String downloadUrl =
+        await storage.ref('evidence/$imageName').getDownloadURL();
+    return downloadUrl;
   }
 }

@@ -22,8 +22,8 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          'Chat with your Neighbours',
-          style: appBarTheme,
+          'Chat with people nearby',
+          style: TextStyle(color: Colors.white),
         ),
         actions: <Widget>[],
       ),
