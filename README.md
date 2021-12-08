@@ -14,3 +14,5 @@ Introducing the Neigbourhood Watch App,
 <li> App is connected with firebase, so crime reports and chats are maintained forever. </li>
 <li> Since chats are inserted in firebase, they can be monitored and moderated by an admin. </li>
 <li> Users can read the top headlines of Indian news using news api</li>
+<li> Upload media evidence to the firebase database storage</li>
+<li> Retrieve the images uploaded as part of evidence for the crime reports in your area tab</li>
