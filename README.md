@@ -1,5 +1,6 @@
 # Neighbourhood Watch App in flutter for Android OS and Apple IOS
 
+To run :  flutter run --no-sound-null-safety as of now as it is in development
 ## Development in process
 
 Introducing the Neigbourhood Watch App,
