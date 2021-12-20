@@ -1,5 +1,6 @@
 # Neighbourhood Watch App in flutter for Android OS and Apple IOS
 
+To run :  flutter run --no-sound-null-safety as of now as it is in development
 ## Development in process
 
 Introducing the Neigbourhood Watch App,
@@ -14,3 +15,6 @@ Introducing the Neigbourhood Watch App,
 <li> App is connected with firebase, so crime reports and chats are maintained forever. </li>
 <li> Since chats are inserted in firebase, they can be monitored and moderated by an admin. </li>
 <li> Users can read the top headlines of Indian news using news api</li>
+<li> Upload media evidence to the firebase database storage</li>
+<li> Retrieve the images uploaded as part of evidence for the crime reports in your area tab</li>
+<li> Users can check the garbage tracking module</li>
