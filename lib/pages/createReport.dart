@@ -112,7 +112,7 @@ class _CreateReportState extends State<CreateReport> {
                           fontSize: 20,
                           fontFamily: 'Montserrat',
                           fontWeight: FontWeight.bold,
-                          color: Colors.white),
+                          color: Colors.black),
                       focusedBorder: UnderlineInputBorder(
                         borderSide: BorderSide(color: Colors.redAccent),
                       ),
@@ -131,7 +131,7 @@ class _CreateReportState extends State<CreateReport> {
                           fontSize: 20,
                           fontFamily: 'Montserrat',
                           fontWeight: FontWeight.bold,
-                          color: Colors.white),
+                          color: Colors.black),
                       focusedBorder: UnderlineInputBorder(
                         borderSide: BorderSide(color: Colors.redAccent),
                       ),
@@ -181,7 +181,7 @@ class _CreateReportState extends State<CreateReport> {
                     "Location Selected:",
                     style: TextStyle(
                         fontSize: 20,
-                        color: Colors.white,
+                        color: Colors.black,
                         fontWeight: FontWeight.bold),
                   ),
                   SizedBox(
@@ -192,7 +192,7 @@ class _CreateReportState extends State<CreateReport> {
                     //"${widget._location.addressLine}",
                     style: TextStyle(
                       fontSize: 20,
-                      color: Colors.white,
+                      color: Colors.black,
                       fontWeight: FontWeight.normal,
                     ),
                   ),

@@ -22,8 +22,7 @@ class MyApp extends StatelessWidget {
     return new MaterialApp(
       debugShowCheckedModeBanner: false, //Hides the debug banner
       title: 'The Neighbourhood Watch App',
-      theme: new ThemeData(
-          scaffoldBackgroundColor: Color.fromRGBO(33, 106, 217, 0.7)),
+      theme: new ThemeData(scaffoldBackgroundColor: Colors.white),
       home: (user == null) ? Login() : HomePage(),
     );
   }

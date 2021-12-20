@@ -147,13 +147,18 @@ class _HomePageState extends State<HomePage> {
                   height: 30,
                 ),
                 Container(
-                  child: Text(
-                    "Dashboard",
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 48,
-                      fontFamily: 'Montserrat',
-                      fontWeight: FontWeight.w900,
+                  child: Center(
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Text(
+                        "Dashboard",
+                        style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 48,
+                          fontFamily: 'Montserrat',
+                          fontWeight: FontWeight.w900,
+                        ),
+                      ),
                     ),
                   ),
                 ),
@@ -163,11 +168,11 @@ class _HomePageState extends State<HomePage> {
                 Container(
                   child: Center(
                     child: Padding(
-                      padding: const EdgeInsets.fromLTRB(25, 10, 0, 0),
+                      padding: const EdgeInsets.fromLTRB(25, 25, 0, 0),
                       child: Text(
-                        "Your neighbourhood's safety, now in your hands.",
+                        "Your neighbourhood's safety, now in your hands. Stay Alert!",
                         style: TextStyle(
-                          color: Colors.white,
+                          color: Colors.grey,
                           fontSize: 24,
                           fontFamily: 'Montserrat',
                           fontWeight: FontWeight.w100,

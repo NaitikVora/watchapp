@@ -89,6 +89,7 @@ class _ShowResultState extends State<ShowResult> {
     String netURLDef =
         "https://demofree.sirv.com/nope-not-here.jpg"; //By default
     return Scaffold(
+      backgroundColor: Colors.blueAccent,
       appBar: AppBar(
         title: t ? Text("NEWS") : Text("REPORTS"),
         actions: <Widget>[
@@ -122,7 +123,7 @@ class _ShowResultState extends State<ShowResult> {
                                 data[index]['title'],
                                 style: TextStyle(
                                     fontFamily: 'Montserrat',
-                                    fontSize: 20.0,
+                                    fontSize: 24.0,
                                     fontWeight: FontWeight.w800),
                               ),
                             ),
