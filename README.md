@@ -18,3 +18,5 @@ Introducing the Neigbourhood Watch App,
 <li> Upload media evidence to the firebase database storage</li>
 <li> Retrieve the images uploaded as part of evidence for the crime reports in your area tab</li>
 <li> Users can check the garbage tracking module</li>
+<li> Connected the realtime firebase database with the IOT ESP8266 NodeMcu and Arduino Uno along with ultrasonic sensor to measure the capacity of the garbage in trash can</li>
+<li> Depending upon the fetched realtime metric app displays the circular progress bar indicating the percentage of capacity available / occupied</li>
