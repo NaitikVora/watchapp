@@ -37,6 +37,7 @@ dependencies:
   file_picker: ^4.0.3
   percent_indicator: ^2.1.7+2
   firebase_database: ^9.0.4
+  syncfusion_flutter_gauges: ^18.2.44
 
 
 dev_dependencies:
