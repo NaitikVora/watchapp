@@ -63,18 +63,18 @@ class _GarbageTracking extends State<GarbageTracking> {
 
   Widget getCircular() {
     //1st get real time value
-    var percentagefilled = getValue; //1-10
+    var percentagefilled = getValue; //0-100
 
     //2nd compare the value and returning correct colour
-    if (percentagefilled <= 3) {
+    if (percentagefilled <= 30) {
       return CircularPercentIndicator(
         radius: 200,
         lineWidth: 25,
-        percent: percentagefilled / 10,
+        percent: percentagefilled / 100,
         animateFromLastPercent: true,
         //animation: true,
         center: new Text(
-          percentagefilled.toString() + "0%",
+          percentagefilled.toString() + "%",
           style: TextStyle(
             fontSize: 32.0,
             fontWeight: FontWeight.bold,
@@ -83,15 +83,15 @@ class _GarbageTracking extends State<GarbageTracking> {
         ),
         progressColor: Colors.greenAccent,
       );
-    } else if (percentagefilled > 3 && percentagefilled <= 6) {
+    } else if (percentagefilled > 30 && percentagefilled <= 60) {
       return CircularPercentIndicator(
         radius: 200,
         lineWidth: 25,
-        percent: percentagefilled / 10,
+        percent: percentagefilled / 100,
         animateFromLastPercent: true,
         //animation: true,
         center: new Text(
-          percentagefilled.toString() + "0%",
+          percentagefilled.toString() + "%",
           style: TextStyle(
             fontSize: 32.0,
             fontWeight: FontWeight.bold,
@@ -100,15 +100,15 @@ class _GarbageTracking extends State<GarbageTracking> {
         ),
         progressColor: Colors.yellow,
       );
-    } else if (percentagefilled > 6 && percentagefilled <= 9) {
+    } else if (percentagefilled > 60 && percentagefilled <= 90) {
       return CircularPercentIndicator(
         radius: 200,
         lineWidth: 25,
-        percent: percentagefilled / 10,
+        percent: percentagefilled / 100,
         animateFromLastPercent: true,
         //animation: true,
         center: new Text(
-          percentagefilled.toString() + "0%",
+          percentagefilled.toString() + "%",
           style: TextStyle(
             fontSize: 32.0,
             fontWeight: FontWeight.bold,
@@ -121,11 +121,11 @@ class _GarbageTracking extends State<GarbageTracking> {
       return CircularPercentIndicator(
         radius: 200,
         lineWidth: 25,
-        percent: percentagefilled / 10,
+        percent: percentagefilled / 100,
         animateFromLastPercent: true,
         //animation: true,
         center: new Text(
-          percentagefilled.toString() + "0%",
+          percentagefilled.toString() + "%",
           style: TextStyle(
             fontSize: 32.0,
             fontWeight: FontWeight.bold,
@@ -140,13 +140,13 @@ class _GarbageTracking extends State<GarbageTracking> {
   Widget instructions() {
     if (getValue == 0) {
       return Text("Plenty space left");
-    } else if (getValue > 1 && getValue <= 7) {
+    } else if (getValue > 0 && getValue <= 60) {
       return Text("Garbage started occupying space");
-    } else if (getValue > 7 && getValue < 10) {
+    } else if (getValue > 60 && getValue <= 80) {
       return Text("Some space left");
     } else {
       return ElevatedButton(
-          onPressed: handleGarbageCall, child: Text("Call for pickup"));
+          onPressed: handleGarbageCall, child: Text("Take Action"));
     }
   }
 
