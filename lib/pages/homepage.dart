@@ -77,7 +77,7 @@ class _HomePageState extends State<HomePage> {
           ? EdgeInsets.fromLTRB(10.0, 10.0, 10.0, 10.0)
           : EdgeInsets.all(10.0),
       child: Container(
-        height: 50.0,
+        height: 70.0,
         child: InkWell(
           onTap: () {
             switch (from) {
@@ -110,7 +110,7 @@ class _HomePageState extends State<HomePage> {
             }
           },
           child: Material(
-            borderRadius: BorderRadius.circular(40.0),
+            borderRadius: BorderRadius.circular(25.0),
             shadowColor: Colors.greenAccent,
             color: color,
             elevation: 7.0,
@@ -168,21 +168,21 @@ class _HomePageState extends State<HomePage> {
                 Container(
                   child: Center(
                     child: Padding(
-                      padding: const EdgeInsets.fromLTRB(25, 25, 0, 0),
+                      padding: const EdgeInsets.fromLTRB(18, 0, 0, 0),
                       child: Text(
                         "Your neighbourhood's safety, now in your hands. Stay Alert!",
                         style: TextStyle(
                           color: Colors.grey,
                           fontSize: 24,
                           fontFamily: 'Montserrat',
-                          fontWeight: FontWeight.w100,
+                          fontWeight: FontWeight.w500,
                         ),
                       ),
                     ),
                   ),
                 ),
                 SizedBox(
-                  height: 70.0,
+                  height: 30.0,
                 ),
                 Column(
                   children: [
