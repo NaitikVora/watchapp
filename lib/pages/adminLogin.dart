@@ -14,20 +14,28 @@ class _AdminLogin extends State<AdminLogin> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text("Login as Admin"),
-      ),
+      backgroundColor: Colors.blueAccent[700],
       body: Container(
           child: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           SizedBox(
-            height: 30,
+            height: 80,
+          ),
+          Center(
+            child: Text("Admin Login",
+                style: TextStyle(
+                    fontSize: 52,
+                    color: Colors.white,
+                    fontWeight: FontWeight.w500)),
+          ),
+          SizedBox(
+            height: 50,
           ),
           Text(
             "Username: ",
-            style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
+            style: TextStyle(fontSize: 30, fontWeight: FontWeight.w700),
           ),
           SizedBox(
             height: 10,
@@ -35,7 +43,7 @@ class _AdminLogin extends State<AdminLogin> {
           TextField(
             decoration: InputDecoration(
                 border: OutlineInputBorder(), hintText: "Enter username"),
-            style: TextStyle(fontSize: 22),
+            style: TextStyle(fontSize: 28, color: Colors.white),
             controller: uid,
           ),
           SizedBox(
@@ -43,15 +51,17 @@ class _AdminLogin extends State<AdminLogin> {
           ),
           Text(
             "Password: ",
-            style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
+            style: TextStyle(fontSize: 30, fontWeight: FontWeight.w700),
           ),
           SizedBox(
             height: 10,
           ),
           TextField(
             decoration: InputDecoration(
-                border: OutlineInputBorder(), hintText: "Enter password"),
-            style: TextStyle(fontSize: 22),
+                border: OutlineInputBorder(),
+                hintText: "Enter password",
+                fillColor: Colors.white),
+            style: TextStyle(fontSize: 28, color: Colors.white),
             controller: pass,
           ),
           SizedBox(
