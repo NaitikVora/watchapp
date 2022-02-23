@@ -8,10 +8,14 @@ import 'services/getlocation.dart';
 var user;
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  //Get location on startup
   GetLocation.getLocation();
+  //Initialize firebse for login and reporting
   await Firebase.initializeApp();
   user = FirebaseAuth.instance.currentUser;
   //print(user);
+
+  //Run app
   runApp(new MyApp());
 }
 

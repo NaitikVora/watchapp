@@ -39,7 +39,6 @@ dependencies:
   firebase_database: ^9.0.4
   syncfusion_flutter_gauges: ^18.2.44
 
-
 dev_dependencies:
   flutter_test:
     sdk: flutter

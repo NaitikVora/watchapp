@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:feel_safe/pages/adminLogin.dart';
 import 'package:feel_safe/pages/homepage.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -41,6 +42,11 @@ class _LoginState extends State<Login> {
     return user;
   }
 
+  void adminlogin() {
+    Navigator.push(
+        context, MaterialPageRoute(builder: (context) => AdminLogin()));
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -79,16 +85,44 @@ class _LoginState extends State<Login> {
                         height: 50.0,
                         child: InkWell(
                           onTap: () {
-                            currentUser(); //Opens up the sign in dialog box and works correctly
+                            currentUser(); //Opens up the google sign in dialog box and works correctly
                           },
                           child: Material(
                             borderRadius: BorderRadius.circular(40.0),
                             shadowColor: Colors.greenAccent,
-                            color: Colors.green,
+                            color: Colors.white,
                             elevation: 7.0,
                             child: Center(
                               child: Text(
-                                "SIGN IN",
+                                "USER SIGN IN",
+                                style: TextStyle(
+                                  color: Colors.black,
+                                  fontWeight: FontWeight.bold,
+                                  fontFamily: 'Montserrat',
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                    Padding(
+                      padding: EdgeInsets.fromLTRB(50.0, 0.0, 50.0, 0),
+                      child: Container(
+                        height: 50.0,
+                        child: InkWell(
+                          onTap: () {
+                            //ADD ADMIN SIGNIN
+                            adminlogin();
+                          },
+                          child: Material(
+                            borderRadius: BorderRadius.circular(40.0),
+                            shadowColor: Colors.lightGreen,
+                            color: Colors.black,
+                            elevation: 7.0,
+                            child: Center(
+                              child: Text(
+                                "ADMIN",
                                 style: TextStyle(
                                   color: Colors.white,
                                   fontWeight: FontWeight.bold,
