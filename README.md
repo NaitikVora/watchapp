@@ -20,3 +20,4 @@ Introducing the Neigbourhood Watch App,
 <li> Users can check the garbage tracking module</li>
 <li> Connected the realtime firebase database with the IOT ESP8266 NodeMcu and Arduino Uno along with ultrasonic sensor to measure the capacity of the garbage in trash can</li>
 <li> Depending upon the fetched realtime metric app displays the circular progress bar indicating the percentage of capacity available / occupied</li>
+<li> Admin entity authentication (moderation and basic admin features yet to implement)</li>
