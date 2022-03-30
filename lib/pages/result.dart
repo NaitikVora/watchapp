@@ -3,6 +3,7 @@ import 'dart:convert';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:feel_safe/services/locationinfo.dart';
 import 'package:feel_safe/widgets/drawer.dart';
+import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:http/http.dart' as http;
@@ -150,8 +151,15 @@ class _ShowResultState extends State<ShowResult> {
           : ListView.builder(
               itemCount: _lengthOfEventsData,
               itemBuilder: (BuildContext context, int index) {
-                //Method to check if image is provided and proceed accordingly
+                //Method to mark report as fake
+                void reportFake() {
+                  //Ref to report and increment the counter +1 and disable the button
+                  final CollectionReference collectionReference =
+                      FirebaseFirestore.instance.collection('reports');
+                  //collectionReference.add(data.where((element) => false));
+                }
 
+                //Method to check if image is provided and proceed accordingly
                 Widget getEvidence() {
                   String fileNameUploaded =
                       eventsData[index]['Evidence'].toString();
@@ -229,16 +237,20 @@ class _ShowResultState extends State<ShowResult> {
                               padding: EdgeInsets.all(5.0),
                             ),
                             getEvidence(),
+                            SizedBox(
+                              height: 5,
+                            ),
+                            //Add ability for users to report fake
                             /*Container(
-                              width: MediaQuery.of(context).size.width,
-                              height: 100,
-                              decoration: BoxDecoration(
-                                image: DecorationImage(
-                                  fit: BoxFit.fill,
-                                  image: NetworkImage(
-                                      eventsData[index]['Evidence']),
-                                ),
-                              ),
+                              child: ElevatedButton(
+                                  style: ButtonStyle(
+                                    backgroundColor:
+                                        MaterialStateProperty.all(Colors.red),
+                                    foregroundColor:
+                                        MaterialStateProperty.all(Colors.white),
+                                  ),
+                                  onPressed: reportFake,
+                                  child: Text("Report as fake")),
                             ),*/
                           ],
                         ),

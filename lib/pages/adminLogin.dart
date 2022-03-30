@@ -14,7 +14,7 @@ class _AdminLogin extends State<AdminLogin> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.blueAccent[700],
+      backgroundColor: Colors.white,
       body: Container(
           child: Column(
         mainAxisAlignment: MainAxisAlignment.start,
@@ -27,7 +27,7 @@ class _AdminLogin extends State<AdminLogin> {
             child: Text("Admin Login",
                 style: TextStyle(
                     fontSize: 52,
-                    color: Colors.white,
+                    color: Colors.black,
                     fontWeight: FontWeight.w500)),
           ),
           SizedBox(
@@ -43,7 +43,9 @@ class _AdminLogin extends State<AdminLogin> {
           TextField(
             decoration: InputDecoration(
                 border: OutlineInputBorder(), hintText: "Enter username"),
-            style: TextStyle(fontSize: 28, color: Colors.white),
+            style: TextStyle(
+              fontSize: 28,
+            ),
             controller: uid,
           ),
           SizedBox(
@@ -51,17 +53,22 @@ class _AdminLogin extends State<AdminLogin> {
           ),
           Text(
             "Password: ",
-            style: TextStyle(fontSize: 30, fontWeight: FontWeight.w700),
+            style: TextStyle(
+              fontSize: 30,
+              fontWeight: FontWeight.w700,
+            ),
           ),
           SizedBox(
             height: 10,
           ),
           TextField(
             decoration: InputDecoration(
-                border: OutlineInputBorder(),
-                hintText: "Enter password",
-                fillColor: Colors.white),
-            style: TextStyle(fontSize: 28, color: Colors.white),
+              border: OutlineInputBorder(),
+              hintText: "Enter password",
+            ),
+            style: TextStyle(
+              fontSize: 28,
+            ),
             controller: pass,
           ),
           SizedBox(

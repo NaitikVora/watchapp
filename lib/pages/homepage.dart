@@ -9,6 +9,7 @@ import 'package:geocoder/geocoder.dart';
 import 'package:flutter_phone_direct_caller/flutter_phone_direct_caller.dart';
 import 'package:flutter_beautiful_popup/main.dart';
 import 'garbageTracking.dart';
+import 'package:feel_safe/services/showNotification.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -132,6 +133,7 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
+    //FireNotif.fireNotif(); Call once user is signed in
     return Scaffold(
       appBar: AppBar(
         title: Text("The Neighbourhood Watch App"),

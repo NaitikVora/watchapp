@@ -1,3 +1,6 @@
+import 'dart:math';
+
+import 'package:feel_safe/main.dart';
 import 'package:feel_safe/services/storage_service.dart';
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -16,6 +19,7 @@ class CreateReport extends StatefulWidget {
 }
 
 class _CreateReportState extends State<CreateReport> {
+  final user = FirebaseAuth.instance.currentUser;
   @override
   void initState() {
     super.initState();
@@ -67,6 +71,8 @@ class _CreateReportState extends State<CreateReport> {
           'State': widget._location.adminArea,
           'Report_time': FieldValue.serverTimestamp(),
           'Evidence': download_url,
+          'Downvote': 0, //To report as fake counter
+          'owner': user?.uid, //Owner of report in uid terms
           //'Evidence': download_url.toString(),
         };
         await collectionReference.add(x).catchError((err) {
