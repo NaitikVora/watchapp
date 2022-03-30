@@ -1,7 +1,9 @@
 # Neighbourhood Watch App in flutter for Android OS and Apple IOS
 
 To run :  flutter run --no-sound-null-safety as of now as it is in development
-## Development in process
+
+## Development in process 
+## Test environment : Flutter 2.10.4 and Android 11 Device.
 
 Introducing the Neigbourhood Watch App,
 
@@ -20,4 +22,5 @@ Introducing the Neigbourhood Watch App,
 <li> Users can check the garbage tracking module</li>
 <li> Connected the realtime firebase database with the IOT ESP8266 NodeMcu and Arduino Uno along with ultrasonic sensor to measure the capacity of the garbage in trash can</li>
 <li> Depending upon the fetched realtime metric app displays the circular progress bar indicating the percentage of capacity available / occupied</li>
-<li> Admin entity authentication (moderation and basic admin features yet to implement)</li>
+<li> Admin entity authentication and moderation (delete reports that are fake) added</li>
+<li> Admin module integrated successfully</li>
