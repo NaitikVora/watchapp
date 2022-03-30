@@ -3,8 +3,7 @@
 To run :  flutter run --no-sound-null-safety as of now as it is in development
 
 ## Development in process 
-
-# Development environment : Flutter 2.10.4
+## Test environment : Flutter 2.10.4 and Android 11 Device.
 
 Introducing the Neigbourhood Watch App,
 
