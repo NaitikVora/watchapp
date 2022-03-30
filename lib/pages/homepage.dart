@@ -135,6 +135,7 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     //FireNotif.fireNotif(); Call once user is signed in
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       appBar: AppBar(
         title: Text("The Neighbourhood Watch App"),
       ),

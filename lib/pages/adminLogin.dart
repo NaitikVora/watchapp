@@ -14,77 +14,84 @@ class _AdminLogin extends State<AdminLogin> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       backgroundColor: Colors.white,
       body: Container(
+          padding: EdgeInsets.all(55),
           child: Column(
-        mainAxisAlignment: MainAxisAlignment.start,
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          SizedBox(
-            height: 80,
-          ),
-          Center(
-            child: Text("Admin Login",
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              SizedBox(
+                height: 30,
+              ),
+              Center(
+                child: Text("Admin Login",
+                    style: TextStyle(
+                        fontSize: 48,
+                        color: Colors.black,
+                        fontWeight: FontWeight.w500)),
+              ),
+              SizedBox(
+                height: 50,
+              ),
+              Text(
+                "Username: ",
+                style: TextStyle(fontSize: 30, fontWeight: FontWeight.w700),
+              ),
+              SizedBox(
+                height: 10,
+              ),
+              TextField(
+                decoration: InputDecoration(
+                    border: OutlineInputBorder(), hintText: "Enter username"),
                 style: TextStyle(
-                    fontSize: 52,
-                    color: Colors.black,
-                    fontWeight: FontWeight.w500)),
-          ),
-          SizedBox(
-            height: 50,
-          ),
-          Text(
-            "Username: ",
-            style: TextStyle(fontSize: 30, fontWeight: FontWeight.w700),
-          ),
-          SizedBox(
-            height: 10,
-          ),
-          TextField(
-            decoration: InputDecoration(
-                border: OutlineInputBorder(), hintText: "Enter username"),
-            style: TextStyle(
-              fontSize: 28,
-            ),
-            controller: uid,
-          ),
-          SizedBox(
-            height: 30,
-          ),
-          Text(
-            "Password: ",
-            style: TextStyle(
-              fontSize: 30,
-              fontWeight: FontWeight.w700,
-            ),
-          ),
-          SizedBox(
-            height: 10,
-          ),
-          TextField(
-            decoration: InputDecoration(
-              border: OutlineInputBorder(),
-              hintText: "Enter password",
-            ),
-            style: TextStyle(
-              fontSize: 28,
-            ),
-            controller: pass,
-          ),
-          SizedBox(
-            height: 30,
-          ),
-          Center(
-            child: ElevatedButton(
-              style: ButtonStyle(
-                  textStyle:
-                      MaterialStateProperty.all(TextStyle(fontSize: 22))),
-              child: Text("Login"),
-              onPressed: () => adminChecker(),
-            ),
-          )
-        ],
-      )),
+                  fontSize: 28,
+                ),
+                controller: uid,
+              ),
+              SizedBox(
+                height: 30,
+              ),
+              Text(
+                "Password: ",
+                style: TextStyle(
+                  fontSize: 30,
+                  fontWeight: FontWeight.w700,
+                ),
+              ),
+              SizedBox(
+                height: 10,
+              ),
+              TextField(
+                obscureText: true,
+                decoration: InputDecoration(
+                  border: OutlineInputBorder(),
+                  hintText: "Enter password",
+                ),
+                style: TextStyle(
+                  fontSize: 28,
+                ),
+                controller: pass,
+              ),
+              SizedBox(
+                height: 30,
+              ),
+              Center(
+                child: SizedBox(
+                  width: MediaQuery.of(context).size.width,
+                  height: 50,
+                  child: ElevatedButton(
+                    style: ButtonStyle(
+                        textStyle:
+                            MaterialStateProperty.all(TextStyle(fontSize: 22))),
+                    child: Text("Login"),
+                    onPressed: () => adminChecker(),
+                  ),
+                ),
+              )
+            ],
+          )),
     );
   }
 
