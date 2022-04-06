@@ -25,4 +25,4 @@ Introducing the Neigbourhood Watch App,
 <li> Admin entity authentication and moderation (delete reports that are fake) added</li>
 <li> Admin module integrated successfully</li>
 
-#Update the state helplines to the updated ones for your state. In the dash and garbage tracker page. That's it :)
+# Update the state helplines to the updated ones for your state. In the dash and garbage tracker page. That's it :)
