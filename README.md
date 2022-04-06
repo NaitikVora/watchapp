@@ -24,3 +24,5 @@ Introducing the Neigbourhood Watch App,
 <li> Depending upon the fetched realtime metric app displays the circular progress bar indicating the percentage of capacity available / occupied</li>
 <li> Admin entity authentication and moderation (delete reports that are fake) added</li>
 <li> Admin module integrated successfully</li>
+
+#Update the state helplines to the updated ones for your state. In the dash and garbage tracker page. That's it :)
