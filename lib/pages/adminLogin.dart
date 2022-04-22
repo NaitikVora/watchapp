@@ -1,4 +1,4 @@
-import 'package:feel_safe/pages/adminPage.dart';
+import 'package:watch_app/pages/adminPage.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 

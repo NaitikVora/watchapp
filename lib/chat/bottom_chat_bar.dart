@@ -1,8 +1,8 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:feel_safe/chat/styles.dart';
+import 'package:watch_app/chat/styles.dart';
 import 'package:flutter/material.dart';
-import 'package:feel_safe/services/locationinfo.dart';
+import 'package:watch_app/services/locationinfo.dart';
 import 'package:geocoder/geocoder.dart';
 import 'dart:async';
 import 'dart:convert';

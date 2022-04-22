@@ -1,14 +1,14 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:feel_safe/chat/bottom_chat_bar.dart';
+import 'package:watch_app/chat/bottom_chat_bar.dart';
 import 'package:flutter/material.dart';
-import 'package:feel_safe/chat/styles.dart';
+import 'package:watch_app/chat/styles.dart';
 import 'package:flutter/widgets.dart';
-import 'package:feel_safe/chat/loading.dart';
+import 'package:watch_app/chat/loading.dart';
 import 'package:geocoder/geocoder.dart';
-import 'package:feel_safe/services/locationinfo.dart';
+import 'package:watch_app/services/locationinfo.dart';
 import 'package:location/location.dart';
-import 'package:feel_safe/services/getlocation.dart';
+import 'package:watch_app/services/getlocation.dart';
 
 class HomeScreen extends StatelessWidget {
   final userloc = GetLocation.getLocation().toString();

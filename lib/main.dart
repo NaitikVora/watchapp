@@ -1,6 +1,6 @@
-import 'package:feel_safe/pages/garbageTracking.dart';
-import 'package:feel_safe/pages/homepage.dart';
-import 'package:feel_safe/pages/login.dart';
+import 'package:watch_app/pages/garbageTracking.dart';
+import 'package:watch_app/pages/homepage.dart';
+import 'package:watch_app/pages/login.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';

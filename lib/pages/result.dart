@@ -1,13 +1,13 @@
 import 'dart:async';
 import 'dart:convert';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:feel_safe/services/locationinfo.dart';
-import 'package:feel_safe/widgets/drawer.dart';
+import 'package:watch_app/services/locationinfo.dart';
+import 'package:watch_app/widgets/drawer.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:http/http.dart' as http;
-import 'package:feel_safe/services/storage_service.dart';
+import 'package:watch_app/services/storage_service.dart';
 
 class ShowResult extends StatefulWidget {
   final String _location;

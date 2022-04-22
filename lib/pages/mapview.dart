@@ -1,8 +1,8 @@
 import 'dart:convert';
 
-import 'package:feel_safe/pages/createReport.dart';
-import 'package:feel_safe/pages/result.dart';
-import 'package:feel_safe/services/locationinfo.dart';
+import 'package:watch_app/pages/createReport.dart';
+import 'package:watch_app/pages/result.dart';
+import 'package:watch_app/services/locationinfo.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_map/flutter_map.dart';
 import 'package:geocoder/geocoder.dart';

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:feel_safe/chat/styles.dart';
+import 'package:watch_app/chat/styles.dart';
 
 class Loading extends StatelessWidget {
   const Loading({Key? key}) : super(key: key);

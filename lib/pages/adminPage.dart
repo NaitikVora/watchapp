@@ -1,5 +1,5 @@
-import 'package:feel_safe/admin/adminUsers.dart';
-import 'package:feel_safe/admin/adminView.dart';
+import 'package:watch_app/admin/adminUsers.dart';
+import 'package:watch_app/admin/adminView.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 

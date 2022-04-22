@@ -1,7 +1,7 @@
-import 'package:feel_safe/pages/createReport.dart';
-import 'package:feel_safe/pages/mapview.dart';
+import 'package:watch_app/pages/createReport.dart';
+import 'package:watch_app/pages/mapview.dart';
 import 'package:flutter/material.dart';
-import 'package:feel_safe/services/locationinfo.dart';
+import 'package:watch_app/services/locationinfo.dart';
 import 'package:geocoder/geocoder.dart';
 import 'package:latlong2/latlong.dart';
 import 'homepage.dart';

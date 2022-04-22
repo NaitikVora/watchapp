@@ -1,7 +1,7 @@
-import 'package:feel_safe/chat/styles.dart';
+import 'package:watch_app/chat/styles.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:feel_safe/services/getlocation.dart';
+import 'package:watch_app/services/getlocation.dart';
 import 'package:percent_indicator/percent_indicator.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -9,7 +9,7 @@ import 'package:syncfusion_flutter_gauges/gauges.dart';
 import 'dart:convert';
 import 'package:flutter_beautiful_popup/main.dart';
 import 'package:flutter_phone_direct_caller/flutter_phone_direct_caller.dart';
-import 'package:feel_safe/services/showNotification.dart';
+import 'package:watch_app/services/showNotification.dart';
 
 class GarbageTracking extends StatefulWidget {
   @override
@@ -31,7 +31,7 @@ class _GarbageTracking extends State<GarbageTracking> {
           popup.button(
             label: 'BMC Helpline No.',
             onPressed: () async {
-              const number = '09930854717'; //Add 1916 BMC Helpline here
+              const number = '1916'; //Add 1916 BMC Helpline here
               bool? res = await FlutterPhoneDirectCaller.callNumber(number);
             },
           ),

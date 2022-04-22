@@ -1,8 +1,8 @@
-import 'package:feel_safe/pages/adminContact.dart';
-import 'package:feel_safe/pages/adminLogin.dart';
-import 'package:feel_safe/pages/createReportOptions.dart';
-import 'package:feel_safe/pages/homepage.dart';
-import 'package:feel_safe/pages/login.dart';
+import 'package:watch_app/pages/adminContact.dart';
+import 'package:watch_app/pages/adminLogin.dart';
+import 'package:watch_app/pages/createReportOptions.dart';
+import 'package:watch_app/pages/homepage.dart';
+import 'package:watch_app/pages/login.dart';
 import 'package:flutter/material.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 

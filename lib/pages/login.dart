@@ -1,7 +1,7 @@
 import 'dart:async';
 
-import 'package:feel_safe/pages/adminLogin.dart';
-import 'package:feel_safe/pages/homepage.dart';
+import 'package:watch_app/pages/adminLogin.dart';
+import 'package:watch_app/pages/homepage.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';

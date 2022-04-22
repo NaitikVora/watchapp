@@ -1,7 +1,8 @@
 import 'dart:math';
 
-import 'package:feel_safe/main.dart';
-import 'package:feel_safe/services/storage_service.dart';
+import 'package:intl/intl.dart';
+import 'package:watch_app/main.dart';
+import 'package:watch_app/services/storage_service.dart';
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:geocoder/geocoder.dart';
@@ -35,6 +36,7 @@ class _CreateReportState extends State<CreateReport> {
   String? _title = "";
   String? _info = "";
   String download_url = "None";
+  String? selectedCrime = "";
 
   void _showSubmitDialog(String msg) async {
     showDialog(
@@ -58,10 +60,16 @@ class _CreateReportState extends State<CreateReport> {
   }
 
   submitReport() async {
+    print(DateTime.now());
     final form = _formKey.currentState!;
     if (form.validate()) {
       form.save();
       if (_title!.length > 0 && _info!.length > 0) {
+        var now = DateTime.now();
+        var formatterDate = DateFormat('dd/MM/yy');
+        var formatterTime = DateFormat('kk:mm');
+        String actualDate = formatterDate.format(now);
+        String actualTime = formatterTime.format(now);
         var x = {
           'Title': _title,
           'Information': _info,
@@ -69,10 +77,14 @@ class _CreateReportState extends State<CreateReport> {
           'Subloc': widget._location.subLocality,
           'City': widget._location.locality,
           'State': widget._location.adminArea,
-          'Report_time': FieldValue.serverTimestamp(),
+          'Date': actualDate,
+          'Time': actualTime,
+          //'Report_time': DateTime.now().toString(),
+          //'Report_time': FieldValue.serverTimestamp(),
           'Evidence': download_url,
-          'Downvote': 0, //To report as fake counter
+          //'Downvote': 0, //To report as fake counter
           'owner': user?.uid, //Owner of report in uid terms
+          'crime_type': selectedCrime, //To be filled by user
           //'Evidence': download_url.toString(),
         };
         await collectionReference.add(x).catchError((err) {
@@ -96,6 +108,17 @@ class _CreateReportState extends State<CreateReport> {
 
   @override
   Widget build(BuildContext context) {
+    var crimetype = [
+      "Accident",
+      "Assault",
+      "Fire",
+      "Theft",
+      "Vehicle related",
+      "Drug incident",
+      "Disaster",
+      "Women safety related",
+      "Other"
+    ];
     final Storage storage = Storage();
     return Scaffold(
       key: _scaffoldKey,
@@ -124,6 +147,35 @@ class _CreateReportState extends State<CreateReport> {
                       ),
                     ),
                     onSaved: (value) => _title = value,
+                  ),
+                  SizedBox(
+                    height: 20.0,
+                  ),
+                  //Dropdown for incident type
+
+                  DropdownButtonFormField(
+                    decoration: InputDecoration(
+                      labelText: "Crime Type",
+                      labelStyle: TextStyle(
+                          fontSize: 22,
+                          fontFamily: 'Montserrat',
+                          fontWeight: FontWeight.bold,
+                          color: Colors.black),
+                      focusedBorder: UnderlineInputBorder(
+                        borderSide: BorderSide(color: Colors.redAccent),
+                      ),
+                    ),
+                    items: crimetype.map((value) {
+                      return DropdownMenuItem(
+                        value: value,
+                        child: Text(value),
+                      );
+                    }).toList(),
+                    onChanged: (value) {
+                      setState(() {
+                        selectedCrime = value.toString();
+                      });
+                    },
                   ),
                   SizedBox(
                     height: 10.0,

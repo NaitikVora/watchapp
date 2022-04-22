@@ -1,4 +1,4 @@
-import 'package:feel_safe/services/locationinfo.dart';
+import 'package:watch_app/services/locationinfo.dart';
 import 'package:geocoder/geocoder.dart';
 import 'package:location/location.dart';
 

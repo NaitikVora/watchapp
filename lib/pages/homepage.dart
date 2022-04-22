@@ -1,15 +1,15 @@
-import 'package:feel_safe/chat/home_screen.dart';
-import 'package:feel_safe/pages/createReportOptions.dart';
-import 'package:feel_safe/pages/mapview.dart';
-import 'package:feel_safe/pages/result.dart';
-import 'package:feel_safe/services/locationinfo.dart';
-import 'package:feel_safe/widgets/drawer.dart';
+import 'package:watch_app/chat/home_screen.dart';
+import 'package:watch_app/pages/createReportOptions.dart';
+import 'package:watch_app/pages/mapview.dart';
+import 'package:watch_app/pages/result.dart';
+import 'package:watch_app/services/locationinfo.dart';
+import 'package:watch_app/widgets/drawer.dart';
 import 'package:flutter/material.dart';
 import 'package:geocoder/geocoder.dart';
 import 'package:flutter_phone_direct_caller/flutter_phone_direct_caller.dart';
 import 'package:flutter_beautiful_popup/main.dart';
 import 'garbageTracking.dart';
-import 'package:feel_safe/services/showNotification.dart';
+import 'package:watch_app/services/showNotification.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -46,23 +46,21 @@ class _HomePageState extends State<HomePage> {
         popup.button(
           label: 'POLICE',
           onPressed: () async {
-            const number =
-                '09930854717'; //Add 100 POLICE Emergency Helpline here
+            const number = '100'; //Add 100 POLICE Emergency Helpline here
             bool? res = await FlutterPhoneDirectCaller.callNumber(number);
           },
         ),
         popup.button(
           label: 'FIRE',
           onPressed: () async {
-            const number = '09930854717'; //Add 101 FIRE Emergency Helpline here
+            const number = '101'; //Add 101 FIRE Emergency Helpline here
             bool? res = await FlutterPhoneDirectCaller.callNumber(number);
           },
         ),
         popup.button(
           label: 'AMBULANCE',
           onPressed: () async {
-            const number =
-                '09930854717'; //Add 102 Ambulance Emergency Helpline here
+            const number = '102'; //Add 102 Ambulance Emergency Helpline here
             bool? res = await FlutterPhoneDirectCaller.callNumber(number);
           },
         ),

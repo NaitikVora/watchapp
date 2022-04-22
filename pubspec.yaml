@@ -1,5 +1,5 @@
-name: feel_safe
-description: A new Flutter project.
+name: watch_app
+description: Securing neighbourhoods.
 
 # The following defines the version and build number for your application.
 # A version number is three numbers separated by dots, like 1.2.43
@@ -41,6 +41,7 @@ dependencies:
   flutter_local_notifications: ^9.3.2
   rxdart: ^0.27.3
   firebase_admin:
+
 
 dev_dependencies:
   flutter_test:
