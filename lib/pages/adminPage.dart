@@ -2,6 +2,7 @@ import 'package:watch_app/admin/adminUsers.dart';
 import 'package:watch_app/admin/adminView.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:watch_app/admin/predictionView.dart';
 
 class AdminPage extends StatelessWidget {
   @override
@@ -49,6 +50,7 @@ class AdminPage extends StatelessWidget {
                   spacing: 20,
                   runSpacing: 20.0,
                   children: <Widget>[
+                    //Remove reports
                     GestureDetector(
                       onTap: () {
                         Navigator.push(
@@ -59,7 +61,7 @@ class AdminPage extends StatelessWidget {
                       },
                       child: SizedBox(
                         width: MediaQuery.of(context).size.width,
-                        height: MediaQuery.of(context).size.height / 2,
+                        height: MediaQuery.of(context).size.height / 3,
                         child: Card(
                           color: Color.fromARGB(255, 21, 21, 21),
                           elevation: 2.0,
@@ -67,7 +69,7 @@ class AdminPage extends StatelessWidget {
                               borderRadius: BorderRadius.circular(20.0)),
                           child: Center(
                               child: Padding(
-                            padding: const EdgeInsets.all(105.0),
+                            padding: const EdgeInsets.all(50.0),
                             child: Column(
                               children: <Widget>[
                                 Image.asset(
@@ -99,17 +101,17 @@ class AdminPage extends StatelessWidget {
                         ),
                       ),
                     ),
-                    /*GestureDetector(
+                    //View predictions
+                    GestureDetector(
                       onTap: () {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) =>
-                                    AdminUsers())); //view and manage users,
+                                builder: (context) => Prediction()));
                       },
                       child: SizedBox(
-                        width: 170.0,
-                        height: 170.0,
+                        width: MediaQuery.of(context).size.width,
+                        height: MediaQuery.of(context).size.height / 5,
                         child: Card(
                           color: Color.fromARGB(255, 21, 21, 21),
                           elevation: 2.0,
@@ -121,14 +123,14 @@ class AdminPage extends StatelessWidget {
                             child: Column(
                               children: <Widget>[
                                 Image.asset(
-                                  "assets/calendar.png",
+                                  "assets/note.png",
                                   width: 64.0,
                                 ),
                                 SizedBox(
                                   height: 20.0,
                                 ),
                                 Text(
-                                  "User",
+                                  "Predictions",
                                   style: TextStyle(
                                       color: Colors.white,
                                       fontWeight: FontWeight.bold,
@@ -138,7 +140,7 @@ class AdminPage extends StatelessWidget {
                                   height: 5.0,
                                 ),
                                 Text(
-                                  "user related actions",
+                                  "Based on the data, we can predict the future.",
                                   style: TextStyle(
                                       color: Colors.white,
                                       fontWeight: FontWeight.w100),
@@ -149,6 +151,7 @@ class AdminPage extends StatelessWidget {
                         ),
                       ),
                     ),
+                    /*
                     SizedBox(
                       width: 170.0,
                       height: 170.0,

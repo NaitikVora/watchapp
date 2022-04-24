@@ -2,6 +2,7 @@ import 'dart:math';
 
 import 'package:intl/intl.dart';
 import 'package:watch_app/main.dart';
+import 'package:watch_app/services/locationinfo.dart';
 import 'package:watch_app/services/storage_service.dart';
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -85,6 +86,8 @@ class _CreateReportState extends State<CreateReport> {
           //'Downvote': 0, //To report as fake counter
           'owner': user?.uid, //Owner of report in uid terms
           'crime_type': selectedCrime, //To be filled by user
+          'lat': widget._location.coordinates.latitude.toString(),
+          'long': widget._location.coordinates.longitude.toString(),
           //'Evidence': download_url.toString(),
         };
         await collectionReference.add(x).catchError((err) {

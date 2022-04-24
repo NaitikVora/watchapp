@@ -41,6 +41,7 @@ dependencies:
   flutter_local_notifications: ^9.3.2
   rxdart: ^0.27.3
   firebase_admin:
+  webview_flutter:
 
 
 dev_dependencies:

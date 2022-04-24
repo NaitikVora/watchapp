@@ -37,7 +37,7 @@ Future<Address> getCurrentLocation() async {
 
     //print(first);
   } catch (e) {
-    print(e);
+    //print(e);
   }
   return first;
 }

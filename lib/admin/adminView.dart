@@ -27,7 +27,7 @@ class _AdminView extends State<AdminView> {
     subscription = collectionReference.snapshots().listen((datasnapshot) {
       FirebaseFirestore.instance
           .collection('/reports')
-          .orderBy('Report_time', descending: true)
+          .orderBy('Time', descending: false)
           .get()
           .then((docs) {
         setState(() {
@@ -121,10 +121,15 @@ class _AdminView extends State<AdminView> {
                         padding: EdgeInsets.all(5.0),
                       ),
                       Text(
-                        "Time: " +
-                            ((eventsData[index]['Report_time'] as Timestamp)
-                                    .toDate())
-                                .toString(),
+                        "Date: " + ((eventsData[index]['Date'].toString())),
+                        style: TextStyle(
+                            fontSize: 11.0, fontWeight: FontWeight.normal),
+                      ),
+                      Padding(
+                        padding: EdgeInsets.all(5.0),
+                      ),
+                      Text(
+                        "Time: " + ((eventsData[index]['Time'].toString())),
                         style: TextStyle(
                             fontSize: 11.0, fontWeight: FontWeight.normal),
                       ),
