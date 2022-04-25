@@ -141,114 +141,116 @@ class _HomePageState extends State<HomePage> {
       body: Stack(
         fit: StackFit.expand,
         children: <Widget>[
-          Center(
-            child: Column(
-              children: [
-                SizedBox(
-                  height: 30,
-                ),
-                Container(
-                  child: Center(
-                    child: Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Text(
-                        "Dashboard",
-                        style: TextStyle(
-                          color: Colors.black,
-                          fontSize: 48,
-                          fontFamily: 'Montserrat',
-                          fontWeight: FontWeight.w900,
-                        ),
-                      ),
-                    ),
+          SingleChildScrollView(
+            child: Center(
+              child: Column(
+                children: [
+                  SizedBox(
+                    height: 30,
                   ),
-                ),
-                SizedBox(
-                  height: 20.0,
-                ),
-                Container(
-                  child: Center(
-                    child: Padding(
-                      padding: const EdgeInsets.fromLTRB(18, 0, 0, 0),
-                      child: Text(
-                        "Your neighbourhood's safety, now in your hands. Stay Alert!",
-                        style: TextStyle(
-                          color: Colors.grey,
-                          fontSize: 24,
-                          fontFamily: 'Montserrat',
-                          fontWeight: FontWeight.w500,
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
-                SizedBox(
-                  height: 30.0,
-                ),
-                Column(
-                  children: [
-                    Container(
-                      padding: EdgeInsets.all(0.0),
-                      child: Column(
-                        // mainAxisAlignment: MainAxisAlignment.center,
-                        children: <Widget>[
-                          //Fetching Report options
-                          retButton("Report Crime", Colors.white,
-                              Color.fromRGBO(149, 22, 222, 1), "report now"),
-                        ],
-                      ),
-                    ),
-                    Container(
-                      padding: EdgeInsets.all(0.0),
-                      child: Column(
-                        // mainAxisAlignment: MainAxisAlignment.center,
-                        children: <Widget>[
-                          //Fetching Report options
-                          retButton("Chat Anonymously", Colors.white,
-                              Color.fromRGBO(69, 0, 242, 1), "chat"),
-                        ],
-                      ),
-                    ),
-                    Container(
-                      padding: EdgeInsets.all(0.0),
-                      child: Column(
-                        // mainAxisAlignment: MainAxisAlignment.center,
-                        children: <Widget>[
-                          //Fetching Report options
-                          retButton("In My Vicinity", Colors.white,
-                              Color.fromRGBO(72, 189, 13, 1), "status"),
-                        ],
-                      ),
-                    ),
-                    Container(
-                      padding: EdgeInsets.all(0.0),
-                      child: Column(
-                        // mainAxisAlignment: MainAxisAlignment.center,
-                        children: <Widget>[
-                          //Fetching Report options
-                          retButton("Garbage Tracking", Colors.white,
-                              Colors.orange, "garbage"),
-                        ],
-                      ),
-                    ),
-                    Container(
-                      padding: EdgeInsets.all(0.0),
-                      child: Column(
-                        // mainAxisAlignment: MainAxisAlignment.center,
-                        children: <Widget>[
-                          //Fetching Report options
-                          retButton(
-                            "Emergency",
-                            Colors.white,
-                            Colors.red,
-                            "emergency",
+                  Container(
+                    child: Center(
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Text(
+                          "Dashboard",
+                          style: TextStyle(
+                            color: Colors.black,
+                            fontSize: 48,
+                            fontFamily: 'Montserrat',
+                            fontWeight: FontWeight.w900,
                           ),
-                        ],
+                        ),
                       ),
                     ),
-                  ],
-                ),
-              ],
+                  ),
+                  SizedBox(
+                    height: 20.0,
+                  ),
+                  Container(
+                    child: Center(
+                      child: Padding(
+                        padding: const EdgeInsets.fromLTRB(18, 0, 0, 0),
+                        child: Text(
+                          "Your neighbourhood's safety, now in your hands. Stay Alert!",
+                          style: TextStyle(
+                            color: Colors.grey,
+                            fontSize: 24,
+                            fontFamily: 'Montserrat',
+                            fontWeight: FontWeight.w500,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                  SizedBox(
+                    height: 30.0,
+                  ),
+                  Column(
+                    children: [
+                      Container(
+                        padding: EdgeInsets.all(0.0),
+                        child: Column(
+                          // mainAxisAlignment: MainAxisAlignment.center,
+                          children: <Widget>[
+                            //Fetching Report options
+                            retButton("Report Crime", Colors.white,
+                                Color.fromRGBO(149, 22, 222, 1), "report now"),
+                          ],
+                        ),
+                      ),
+                      Container(
+                        padding: EdgeInsets.all(0.0),
+                        child: Column(
+                          // mainAxisAlignment: MainAxisAlignment.center,
+                          children: <Widget>[
+                            //Fetching Report options
+                            retButton("Chat Anonymously", Colors.white,
+                                Color.fromRGBO(69, 0, 242, 1), "chat"),
+                          ],
+                        ),
+                      ),
+                      Container(
+                        padding: EdgeInsets.all(0.0),
+                        child: Column(
+                          // mainAxisAlignment: MainAxisAlignment.center,
+                          children: <Widget>[
+                            //Fetching Report options
+                            retButton("In My Vicinity", Colors.white,
+                                Color.fromRGBO(72, 189, 13, 1), "status"),
+                          ],
+                        ),
+                      ),
+                      Container(
+                        padding: EdgeInsets.all(0.0),
+                        child: Column(
+                          // mainAxisAlignment: MainAxisAlignment.center,
+                          children: <Widget>[
+                            //Fetching Report options
+                            retButton("Garbage Tracking", Colors.white,
+                                Colors.orange, "garbage"),
+                          ],
+                        ),
+                      ),
+                      Container(
+                        padding: EdgeInsets.all(0.0),
+                        child: Column(
+                          // mainAxisAlignment: MainAxisAlignment.center,
+                          children: <Widget>[
+                            //Fetching Report options
+                            retButton(
+                              "Emergency",
+                              Colors.white,
+                              Colors.red,
+                              "emergency",
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
             ),
           ),
         ],

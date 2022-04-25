@@ -7,6 +7,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 
 class Login extends StatefulWidget {
+  static late GoogleSignInAccount userForDrawer;
   @override
   _LoginState createState() => _LoginState();
 }
@@ -18,6 +19,7 @@ class _LoginState extends State<Login> {
   Future<User?> currentUser() async {
     final GoogleSignInAccount account =
         await (GoogleSignIn().signIn() as FutureOr<GoogleSignInAccount>);
+    Login.userForDrawer = account;
     final GoogleSignInAuthentication authentication =
         await account.authentication;
 
@@ -29,7 +31,7 @@ class _LoginState extends State<Login> {
         await _auth.signInWithCredential(credential);
     final User? user = authResult.user;
 
-    print("User Name : ${user?.displayName}");
+    //print("User Name : ${user?.displayName}");
 
     Navigator.push(
         context, MaterialPageRoute(builder: (context) => HomePage()));
