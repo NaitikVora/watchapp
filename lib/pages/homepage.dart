@@ -1,6 +1,8 @@
+import 'package:watch_app/admin/predictionView.dart';
 import 'package:watch_app/chat/home_screen.dart';
 import 'package:watch_app/pages/createReportOptions.dart';
 import 'package:watch_app/pages/mapview.dart';
+import 'package:watch_app/pages/predictions.dart';
 import 'package:watch_app/pages/result.dart';
 import 'package:watch_app/services/locationinfo.dart';
 import 'package:watch_app/widgets/drawer.dart';
@@ -76,12 +78,17 @@ class _HomePageState extends State<HomePage> {
           ? EdgeInsets.fromLTRB(10.0, 10.0, 10.0, 10.0)
           : EdgeInsets.all(10.0),
       child: Container(
-        height: 70.0,
+        height: 65.0,
         child: InkWell(
           onTap: () {
             switch (from) {
               case "report now":
                 handleReport();
+                break;
+
+              case "pred":
+                Navigator.of(context).push(
+                    MaterialPageRoute(builder: (context) => PredictionsUser()));
                 break;
 
               case "status":
@@ -109,8 +116,8 @@ class _HomePageState extends State<HomePage> {
             }
           },
           child: Material(
-            borderRadius: BorderRadius.circular(25.0),
-            shadowColor: Colors.greenAccent,
+            borderRadius: BorderRadius.circular(20.0),
+            shadowColor: Colors.black,
             color: color,
             elevation: 7.0,
             child: Center(
@@ -119,6 +126,7 @@ class _HomePageState extends State<HomePage> {
                 style: TextStyle(
                   color: textColor,
                   fontWeight: FontWeight.bold,
+                  fontSize: 18,
                   fontFamily: 'Montserrat',
                 ),
               ),
@@ -195,7 +203,7 @@ class _HomePageState extends State<HomePage> {
                           children: <Widget>[
                             //Fetching Report options
                             retButton("Report Crime", Colors.white,
-                                Color.fromRGBO(149, 22, 222, 1), "report now"),
+                                Color.fromARGB(255, 1, 76, 180), "report now"),
                           ],
                         ),
                       ),
@@ -205,8 +213,8 @@ class _HomePageState extends State<HomePage> {
                           // mainAxisAlignment: MainAxisAlignment.center,
                           children: <Widget>[
                             //Fetching Report options
-                            retButton("Chat Anonymously", Colors.white,
-                                Color.fromRGBO(69, 0, 242, 1), "chat"),
+                            retButton("Predictions", Colors.white,
+                                Color.fromARGB(255, 1, 76, 180), "pred"),
                           ],
                         ),
                       ),
@@ -217,7 +225,18 @@ class _HomePageState extends State<HomePage> {
                           children: <Widget>[
                             //Fetching Report options
                             retButton("In My Vicinity", Colors.white,
-                                Color.fromRGBO(72, 189, 13, 1), "status"),
+                                Color.fromARGB(255, 1, 76, 180), "status"),
+                          ],
+                        ),
+                      ),
+                      Container(
+                        padding: EdgeInsets.all(0.0),
+                        child: Column(
+                          // mainAxisAlignment: MainAxisAlignment.center,
+                          children: <Widget>[
+                            //Fetching Report options
+                            retButton("Chat Anonymously", Colors.white,
+                                Color.fromARGB(255, 1, 76, 180), "chat"),
                           ],
                         ),
                       ),
@@ -228,7 +247,7 @@ class _HomePageState extends State<HomePage> {
                           children: <Widget>[
                             //Fetching Report options
                             retButton("Garbage Tracking", Colors.white,
-                                Colors.orange, "garbage"),
+                                Color.fromARGB(255, 1, 76, 180), "garbage"),
                           ],
                         ),
                       ),

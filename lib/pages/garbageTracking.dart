@@ -50,7 +50,7 @@ class _GarbageTracking extends State<GarbageTracking> {
 
       // Subscribe to the stream!
       stream.listen((DatabaseEvent event) {
-        var realTimeValue = event.snapshot.child("Distance").value;
+        var realTimeValue = event.snapshot.child("-N2R83Llz6l4KuG68boq").value;
         var intValue = int.parse(realTimeValue.toString());
         //print("Internal = " + intValue.toString());
 
@@ -59,7 +59,7 @@ class _GarbageTracking extends State<GarbageTracking> {
         });
       });
     }
-    return getCircular();
+    return Text(getValue.toString());
   }
 
   //Notif Fire counter

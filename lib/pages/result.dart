@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'dart:convert';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:watch_app/main.dart';
 import 'package:watch_app/services/locationinfo.dart';
 import 'package:watch_app/widgets/drawer.dart';
 import 'package:firebase_database/firebase_database.dart';
@@ -111,36 +112,31 @@ class _ShowResultState extends State<ShowResult> {
               itemCount: data.length,
               itemBuilder: (BuildContext context, int index) {
                 return Container(
-                  padding: EdgeInsets.fromLTRB(10.0, 5.0, 10.0, 0.0),
+                  padding: EdgeInsets.fromLTRB(6.0, 5.0, 6.0, 0.0),
                   child: Center(
                     child: Card(
-                      child: Container(
-                        padding: EdgeInsets.all(12.0),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.stretch,
-                          children: <Widget>[
-                            Container(
-                              child: Text(
+                      child: InkWell(
+                        onTap: () {
+                          _launchURL(data[index]['url']);
+                        },
+                        child: Container(
+                          padding: EdgeInsets.all(12.0),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.stretch,
+                            children: <Widget>[
+                              Container(
+                                  child:
+                                      Image.network(data[index]['urlToImage'])),
+                              Padding(
+                                padding: EdgeInsets.all(5.0),
+                              ),
+                              Text(
                                 data[index]['title'],
-                                style: TextStyle(
-                                    fontFamily: 'Montserrat',
-                                    fontSize: 24.0,
-                                    fontWeight: FontWeight.w800),
-                              ),
-                            ),
-                            Padding(
-                              padding: EdgeInsets.all(5.0),
-                            ),
-                            InkWell(
-                              onTap: () {
-                                _launchURL(data[index]['url']);
-                              },
-                              child: Text(
-                                data[index]['url'],
-                                style: TextStyle(color: Colors.blue),
-                              ),
-                            )
-                          ],
+                                textScaleFactor: 1.25,
+                                style: TextStyle(fontWeight: FontWeight.w800),
+                              )
+                            ],
+                          ),
                         ),
                       ),
                     ),

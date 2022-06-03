@@ -8,6 +8,7 @@ import 'services/getlocation.dart';
 import 'services/showNotification.dart';
 
 var user;
+
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   //Get location on startup
